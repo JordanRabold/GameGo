@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace GameGo.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,15 +15,11 @@ namespace GameGo.Controllers
             _logger = logger;
         }
 
-        [Authorize(Roles = IdentityHelper.User)]
-        [Authorize(Roles = IdentityHelper.Administrator)]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Authorize(Roles = IdentityHelper.User)]
-        [Authorize(Roles = IdentityHelper.Administrator)]
         public IActionResult Privacy()
         {
             return View();

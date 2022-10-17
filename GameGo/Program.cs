@@ -68,6 +68,7 @@ IServiceScope serviceProvider = app.Services.GetRequiredService<IServiceProvider
 // Create default roles
 await IdentityHelper.CreateRoles(serviceProvider.ServiceProvider, IdentityHelper.Administrator, IdentityHelper.User);
 
-// Create default Administrator 
+// Create default Administrator
+await IdentityHelper.CreateDefaultUser(serviceProvider.ServiceProvider, IdentityHelper.Administrator);
 
 app.Run();

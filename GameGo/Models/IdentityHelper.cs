@@ -21,5 +21,25 @@ namespace GameGo.Models
                 }
             }
         }
+
+        public static async Task CreateDefaultUser(IServiceProvider provider, string role)
+        {
+            var userManager = provider.GetService<UserManager<IdentityUser>>();
+
+            // If no users present, make the deafult user
+            int numUsers = (await userManager.GetUsersInRoleAsync(role)).Count;
+            if(numUsers == 0) // If no users are in the specified role
+            {
+                var defaultUser = new IdentityUser()
+                {
+                    Email = "admin@GameGo.com",
+                    UserName = "Admin"
+                };
+
+                await userManager.CreateAsync(defaultUser, "Programming#01");
+
+                await userManager.AddToRoleAsync(defaultUser, role);
+            }
+        }
     }
 }
