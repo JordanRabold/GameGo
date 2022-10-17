@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using GameGo.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameGo.Data
@@ -9,5 +10,7 @@ namespace GameGo.Data
             : base(options)
         {
         }
+
+        public DbSet<Game> Games { get; set; }
     }
 }
