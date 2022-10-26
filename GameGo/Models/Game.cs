@@ -8,6 +8,8 @@
 
         public double Price { get; set; }
 
+        public string Console { get; set; }
+
         public string ESRB { get; set; }
 
         public string Description { get; set; }
