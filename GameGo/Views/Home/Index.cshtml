@@ -1,8 +1,83 @@
-﻿@{
+﻿@model IEnumerable<GameGo.Models.Game>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">GameGo</h1>
 </div>
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+        <img src="https://media.gamestop.com/i/gamestop/10141904/The-Legend-of-Zelda-Breath-of-the-Wild---Nintendo-Switch" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Zelda: Breath of the Wild</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Platform: Nintendo Switch</h6>
+                <h6 class="card-subtitle mb-2 text-muted">ESRB: E</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Price: $60.00</h6>
+                <p class="card-text">
+                    Forget everything you know about The Legend of Zelda games. 
+                    Step into a world of discovery, exploration, and adventure in The Legend of Zelda: Breath of the Wild, 
+                    a boundary-breaking new game in the acclaimed series. Travel across vast fields, through forests, 
+                    and to mountain peaks as you discover what has become of the kingdom of Hyrule 
+                    in this stunning Open-Air Adventure. Now on Nintendo Switch, your journey is freer and more open than ever. 
+                    Take your system anywhere, and adventure as Link any way you like.
+                </p>
+                <a href="#" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+        <img src="https://media.gamestop.com/i/gamestop/11158704/Horizon-Forbidden-West-Launch-Edition---PlayStation-5" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Horizon Forbidden West</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Platform: Playstation 5</h6>
+                <h6 class="card-subtitle mb-2 text-muted">ESRB: T</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Price: $60.00</h6>
+                <p class="card-text">
+                    Aloy is back on a new adventure. Journey with her across a beautiful post-apocalyptic 
+                    world dominated by machine-like creatures and experience immersive gameplay as she faces 
+                    staggering odds in this open-world action-adventure RPG video game.
+                </p>
+                <a href="#" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+        </div>
+    </div>
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+        <img src="https://media.gamestop.com/i/gamestop/11108375/Halo-Infinite---Xbox-Series-X" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Halo Infinite</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Platform: Xbox Series X/S</h6>
+                <h6 class="card-subtitle mb-2 text-muted">ESRB: T</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Price: $60.00</h6>
+                <p class="card-text">
+                    Master Chief is back in his most epic adventure to date. 
+                    Experience the ultimate gameplay and explore a stunning sci-fi world in this riveting, 
+                    first person shooter video game.
+                </p>
+                <a href="#" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
