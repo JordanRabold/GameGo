@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GameGo.Data;
 using GameGo.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Data.SqlClient;
 
 namespace GameGo.Controllers
 {
@@ -57,6 +58,7 @@ namespace GameGo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Price,ESRB,Description,Console")] Game game)
+        public async Task<IActionResult> Create([Bind("Id,Title,Price,Console,ESRB,Description")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +90,7 @@ namespace GameGo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Price,ESRB,Description,Console")] Game game)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Price,Console,ESRB,Description")] Game game)
         {
             if (id != game.Id)
             {
@@ -157,7 +159,7 @@ namespace GameGo.Controllers
 
         private bool GameExists(int id)
         {
-          return _context.Games.Any(e => e.Id == id);
+            return _context.Games.Any(e => e.Id == id);
         }
     }
 }
