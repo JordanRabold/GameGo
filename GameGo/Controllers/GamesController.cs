@@ -47,17 +47,16 @@ namespace GameGo.Controllers
         }
 
         // GET: Games/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Games/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Price,ESRB,Description,Console")] Game game)
         public async Task<IActionResult> Create([Bind("Id,Title,Price,Console,ESRB,Description")] Game game)
         {
             if (ModelState.IsValid)
@@ -70,6 +69,7 @@ namespace GameGo.Controllers
         }
 
         // GET: Games/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Games == null)
@@ -121,6 +121,7 @@ namespace GameGo.Controllers
         }
 
         // GET: Games/Delete/5
+        [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Games == null)

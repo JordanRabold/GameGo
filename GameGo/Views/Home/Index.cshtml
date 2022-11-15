@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GameGo.Models.Game>
+﻿@model IEnumerable<Game>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,6 +7,14 @@
 <div class="text-center">
     <h1 class="display-4">GameGo</h1>
 </div>
+
+@{
+    <p>Title: @Model.Title</p>
+    <p>Price: @Model.Price</p>
+    <p>Console: @Model.Console</p>
+    <p>ESRB: @Model.ESRB</p>
+    <p>Description: @Model.Description</p>
+}
 
 
 
